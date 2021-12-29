@@ -17,5 +17,12 @@ export default function FriendList({ friends }) {
 }
 
 FriendList.propTypes = {
-  friends: propTypes.array,
+  friends: propTypes.arrayOf(
+    propTypes.shape({
+      avatar: propTypes.string,
+      name: propTypes.string.isRequired,
+      isOnline: propTypes.bool.isRequired,
+      id: propTypes.number.isRequired
+    })
+  ).isRequired,
 };
